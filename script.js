@@ -8,6 +8,6 @@ function triangleTracker() {
     (thirdInput === firstInput && firstInput === secondInput) ||
     (secondInput === thirdInput && thirdInput === firstInput)
   ) {
-    document.getElementById("result").innerHTML = "Equilateral Triangle";
+    document.getElementById("result").innerHTML = "Equilateral ";
   }
 }
