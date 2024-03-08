@@ -37,6 +37,6 @@ function triangleTracker() {
     thirdInput + secondInput > firstInput
   ) {
     console.log("Scalene Triangle");
-    document.getElementById("result").innerHTML = "Scalene Triangle";
+    document.getElementById("result").innerHTML = <b>"Scalene Triangle"</b>;
   }
 }
