@@ -12,7 +12,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 20%;
-  height: 55%;
+  height: 75%;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 1px 1px 20px 1px #000;
@@ -41,7 +41,12 @@ body {
   margin-top: 10px;
   color: white;
 }
-
+.side {
+  font-size: 20px;
+  padding-left: 12px;
+  margin-top: 10px;
+  color: white;
+}
 #track-btn {
   margin-top: 20px;
   width: 95%;

@@ -2,9 +2,11 @@ function triangleTracker() {
   const firstInput = parseInt(document.getElementById("input1").value);
   const secondInput = parseInt(document.getElementById("input2").value);
   const thirdInput = parseInt(document.getElementById("input3").value);
+  const firstInputSquared = Math.pow(firstInput, 2);
+  const secondInputSquared = Math.pow(secondInput, 2);
+  const thirdInputSquared = Math.pow(thirdInput, 2);
   // Not a  triangle
   if (
-    (firstInput === 0 && secondInput === 0 && thirdInput === 0) ||
     firstInput + secondInput <= thirdInput ||
     secondInput + thirdInput <= firstInput ||
     thirdInput + firstInput <= secondInput
@@ -36,7 +38,15 @@ function triangleTracker() {
     secondInput + thirdInput > firstInput ||
     thirdInput + secondInput > firstInput
   ) {
-    console.log("Scalene Triangle");
-    document.getElementById("result").innerHTML = <a>"Scalene Triangle"</a>;
+    document.getElementById("result").innerHTML = "Scalene Triangle";
   }
+  //  Acute Triangle
+  if (
+    firstInputSquared + secondInputSquared > thirdInputSquared &&
+    secondInputSquared + thirdInputSquared > firstInputSquared &&
+    firstInputSquared + thirdInputSquared > secondInputSquared
+  ) {
+    document.getElementById("result").prepend("Acute ");
+  }
+  
 }
