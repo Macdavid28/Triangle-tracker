@@ -48,5 +48,14 @@ function triangleTracker() {
   ) {
     document.getElementById("result").prepend("Acute ");
   }
-  
+  // Right Angle
+  if (
+    firstInputSquared + secondInputSquared === thirdInputSquared ||
+    secondInputSquared + thirdInputSquared === firstInputSquared ||
+    firstInputSquared + thirdInputSquared === secondInputSquared
+  ) {
+    document.getElementById("result").prepend("Right Angled ");
+  } else {
+    document.getElementById("result").prepend("Obtuse ");
+  }
 }
