@@ -17,19 +17,45 @@ function triangleTracker() {
   else if (
     (firstInput === secondInput && secondInput === thirdInput) ||
     (thirdInput === firstInput && firstInput === secondInput) ||
-    (secondInput === thirdInput && thirdInput === firstInput)
+    (secondInput === thirdInput &&
+      thirdInput === firstInput &&
+      firstInputSquared + secondInputSquared > thirdInputSquared &&
+      secondInputSquared + thirdInputSquared > firstInputSquared &&
+      firstInputSquared + thirdInputSquared > secondInputSquared)
   ) {
-    document.getElementById("result").innerHTML = "Equilateral Triangle";
+    document.getElementById("result").innerHTML = "Acute Equilateral Triangle";
   }
+
   // Isosceles Triangle
   else if (
     firstInput === secondInput ||
     secondInput === thirdInput ||
     firstInput === thirdInput
   ) {
-    document.getElementById("result").innerHTML = "Isosceles Triangle";
+    if (
+      firstInputSquared + secondInputSquared > thirdInputSquared &&
+      secondInputSquared + thirdInputSquared > firstInputSquared &&
+      firstInputSquared + thirdInputSquared > secondInputSquared
+    ) {
+      document.getElementById("result").innerHTML = "Acute Isosceles Triangle";
+    } else if (
+      firstInputSquared + secondInputSquared === thirdInputSquared ||
+      secondInputSquared + thirdInputSquared === firstInputSquared ||
+      firstInputSquared + thirdInputSquared === secondInputSquared
+    ) {
+      document.getElementById("result").innerHTML =
+        "Right Angled  Isosceles Triangle";
+    } else if (
+      firstInputSquared + secondInputSquared < thirdInputSquared ||
+      secondInputSquared + thirdInputSquared < firstInputSquared ||
+      firstInputSquared + thirdInputSquared < secondInputSquared
+    ) {
+      document.getElementById("result").innerHTML = "Obtuse Isosceles Triangle";
+    } else {
+      document.getElementById("result").innerHTML = "Isosceles Triangle";
+    }
   }
-  // Scalene Triangle
+  // // Scalene Triangle
   else if (
     (firstInput != secondInput &&
       secondInput != thirdInput &&
@@ -38,24 +64,27 @@ function triangleTracker() {
     secondInput + thirdInput > firstInput ||
     thirdInput + secondInput > firstInput
   ) {
-    document.getElementById("result").innerHTML = "Scalene Triangle";
-  }
-  //  Acute Triangle
-  if (
-    firstInputSquared + secondInputSquared > thirdInputSquared &&
-    secondInputSquared + thirdInputSquared > firstInputSquared &&
-    firstInputSquared + thirdInputSquared > secondInputSquared
-  ) {
-    document.getElementById("result").prepend("Acute ");
-  }
-  // Right Angle
-  if (
-    firstInputSquared + secondInputSquared === thirdInputSquared ||
-    secondInputSquared + thirdInputSquared === firstInputSquared ||
-    firstInputSquared + thirdInputSquared === secondInputSquared
-  ) {
-    document.getElementById("result").prepend("Right Angled ");
-  } else {
-    document.getElementById("result").prepend("Obtuse ");
+    if (
+      firstInputSquared + secondInputSquared > thirdInputSquared &&
+      secondInputSquared + thirdInputSquared > firstInputSquared &&
+      firstInputSquared + thirdInputSquared > secondInputSquared
+    ) {
+      document.getElementById("result").innerHTML = "Acute Scalene Triangle";
+    } else if (
+      firstInputSquared + secondInputSquared === thirdInputSquared ||
+      secondInputSquared + thirdInputSquared === firstInputSquared ||
+      firstInputSquared + thirdInputSquared === secondInputSquared
+    ) {
+      document.getElementById("result").innerHTML =
+        "Right Angled  Scalene Triangle";
+    } else if (
+      firstInputSquared + secondInputSquared < thirdInputSquared ||
+      secondInputSquared + thirdInputSquared < firstInputSquared ||
+      firstInputSquared + thirdInputSquared < secondInputSquared
+    ) {
+      document.getElementById("result").innerHTML = "Obtuse Scalene Triangle";
+    } else {
+      document.getElementById("result").innerHTML = "Scalene Triangle";
+    }
   }
 }
